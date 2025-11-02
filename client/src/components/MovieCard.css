@@ -1,0 +1,172 @@
+.tmdb-movie-card {
+  width: 150px;
+  min-width: 150px;
+  margin-bottom: 30px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.card-inner {
+  width: 100%;
+  position: relative;
+}
+
+/* Image Section */
+.image-wrapper {
+  width: 100%;
+  height: 225px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background-color: #dbdbdb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Rating Circle - EXACT TMDB Style */
+.consensus-wrapper {
+  position: absolute;
+  bottom: -20px;
+  left: 8px;
+  z-index: 2;
+}
+
+.rating-circle {
+  width: 38px;
+  height: 38px;
+  background-color: #081c22;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 2px solid #081c22;
+}
+
+/* Rating based on score - TMDB Colors */
+.rating-circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #21d07a; /* Green for high ratings */
+  clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%, 0 100%, 0 0, 50% 0);
+}
+
+/* Low rating color */
+.rating-circle.low-rating::before {
+  border-color: #d2d531; /* Yellow for medium ratings */
+}
+
+.rating-circle.very-low-rating::before {
+  border-color: #db2360; /* Red for low ratings */
+}
+
+.rating-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+}
+
+.rating-number {
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.rating-percent {
+  color: #fff;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 1;
+  margin-left: 1px;
+}
+
+/* Card Content */
+.card-content {
+  padding: 26px 10px 12px 10px;
+}
+
+.title-link {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.movie-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+  color: #000;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 42px;
+}
+
+.title-link:hover .movie-title {
+  color: #01b4e4;
+}
+
+.release-date {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  line-height: 1;
+}
+
+/* Responsive - Tablet */
+@media (min-width: 768px) {
+  .tmdb-movie-card {
+    width: 175px;
+    min-width: 175px;
+  }
+
+  .image-wrapper {
+    height: 262.5px;
+  }
+}
+
+/* Responsive - Desktop */
+@media (min-width: 992px) {
+  .tmdb-movie-card {
+    width: 150px;
+    min-width: 150px;
+  }
+
+  .image-wrapper {
+    height: 225px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tmdb-movie-card {
+    width: 175px;
+    min-width: 175px;
+  }
+
+  .image-wrapper {
+    height: 262.5px;
+  }
+}
