@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getImageUrl } from '../services/tmdbApi';
 import './MovieCard.css';
 
 const MovieCard = ({ movie }) => {
-  const imageUrl = getImageUrl(movie.poster_path);
+  // Build image URL directly - no function call needed
+  const imageUrl = movie.poster_path 
+    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+    : 'https://via.placeholder.com/500x750/032541/01b4e4?text=No+Image';
+    
   const releaseDate = movie.release_date 
     ? new Date(movie.release_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
     : 'TBA';
@@ -12,7 +15,6 @@ const MovieCard = ({ movie }) => {
   return (
     <div className="tmdb-movie-card">
       <div className="card-inner">
-        {/* Poster Image */}
         <div className="image-wrapper">
           <Link to={`/movie/${movie.id}`}>
             <img 
@@ -26,7 +28,6 @@ const MovieCard = ({ movie }) => {
           </Link>
         </div>
 
-        {/* Rating Circle - TMDB Style */}
         <div className="consensus-wrapper">
           <div className="rating-circle">
             <div className="rating-content">
@@ -36,7 +37,6 @@ const MovieCard = ({ movie }) => {
           </div>
         </div>
 
-        {/* Movie Info */}
         <div className="card-content">
           <Link to={`/movie/${movie.id}`} className="title-link">
             <h2 className="movie-title">{movie.title}</h2>

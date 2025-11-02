@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import tmdbAPI from '../services/tmdbApi';
+import tmdbApi from '../services/tmdbApi';
 import MovieCard from '../components/MovieCard';
 import './Movies.css';
 
@@ -14,8 +14,8 @@ const Movies = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await tmdbAPI.getPopular(page);
-      setMovies(response.data.results);
+      const data = await tmdbApi.getPopularMovies(page);
+      setMovies(data.results);
     } catch (error) {
       console.error('Error fetching movies:', error);
       setError('Failed to load movies. Please try again.');
@@ -38,8 +38,8 @@ const Movies = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await tmdbAPI.search(searchQuery);
-      setMovies(response.data.results);
+      const data = await tmdbApi.searchMovies(searchQuery);
+      setMovies(data.results);
     } catch (error) {
       console.error('Error searching movies:', error);
       setError('Failed to search movies.');
@@ -84,7 +84,6 @@ const Movies = () => {
           </div>
         ) : (
           <>
-            {/* TMDB Grid Layout */}
             <div className="tmdb-movie-grid">
               {movies.length > 0 ? (
                 movies.map((movie) => (
@@ -123,3 +122,4 @@ const Movies = () => {
 };
 
 export default Movies;
+

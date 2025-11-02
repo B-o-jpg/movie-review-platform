@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import tmdbAPI, { getImageUrl } from '../services/tmdbApi';
+import tmdbApi from '../services/tmdbApi';
 import { reviewAPI } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import StarRating from '../components/StarRating';
@@ -22,8 +22,8 @@ const MovieDetails = () => {
 
   const fetchMovieData = async () => {
     try {
-      const response = await tmdbAPI.getDetails(id);
-      setMovie(response.data);
+      const data = await tmdbApi.getMovieDetails(id);
+      setMovie(data);
     } catch (error) {
       console.error('Error:', error);
     } finally {
@@ -96,7 +96,7 @@ const MovieDetails = () => {
     return <div className="container mt-5">Movie not found</div>;
   }
 
-  const imageUrl = getImageUrl(movie.poster_path);
+  const imageUrl = tmdbApi.getImageUrl(movie.poster_path);
 
   return (
     <div className="container mt-4">
