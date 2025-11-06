@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { auth } from './firebase';
 
- const API_BASE_URL = '/api';
-
+const API_BASE_URL = "https://<movie-review-platform-4449>.web.app/api";
 
 const api = axios.create({
   baseURL: API_BASE_URL

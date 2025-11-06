@@ -1,0 +1,90 @@
+[debug] [2025-11-04T07:42:59.480Z] ----------------------------------------------------------------------
+[debug] [2025-11-04T07:42:59.483Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js functions:shell
+[debug] [2025-11-04T07:42:59.483Z] CLI Version:   14.23.0
+[debug] [2025-11-04T07:42:59.483Z] Platform:      win32
+[debug] [2025-11-04T07:42:59.484Z] Node Version:  v22.15.0
+[debug] [2025-11-04T07:42:59.484Z] Time:          Tue Nov 04 2025 09:42:59 GMT+0200 (South Africa Standard Time)
+[debug] [2025-11-04T07:42:59.485Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-04T07:42:59.488Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-11-04T07:42:59.898Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-11-04T07:42:59.898Z] > authorizing via signed-in user (boitumelompelane7@gmail.com)
+[debug] [2025-11-04T07:42:59.898Z] [iam] checking project movie-review-platform-4449e for permissions ["firebase.projects.get"]
+[debug] [2025-11-04T07:42:59.899Z] Checked if tokens are valid: false, expires at: 1762119497611
+[debug] [2025-11-04T07:42:59.899Z] Checked if tokens are valid: false, expires at: 1762119497611
+[debug] [2025-11-04T07:42:59.900Z] > refreshing access token with scopes: []
+[debug] [2025-11-04T07:42:59.902Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-11-04T07:42:59.902Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-04T07:43:01.233Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-11-04T07:43:01.234Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-04T07:43:01.253Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/movie-review-platform-4449e:testIamPermissions [none]
+[debug] [2025-11-04T07:43:01.254Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/movie-review-platform-4449e:testIamPermissions x-goog-quota-user=projects/movie-review-platform-4449e
+[debug] [2025-11-04T07:43:01.254Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/movie-review-platform-4449e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-11-04T07:43:01.643Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-11-04T07:43:01.643Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-11-04T07:43:03.750Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/movie-review-platform-4449e:testIamPermissions 200
+[debug] [2025-11-04T07:43:03.750Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/movie-review-platform-4449e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-11-04T07:43:03.751Z] Emulator locator file path: C:\Users\USER\AppData\Local\Temp\hub-movie-review-platform-4449e.json
+[debug] [2025-11-04T07:43:03.763Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-04T07:43:03.950Z] defaultcredentials: writing to file C:\Users\USER\AppData\Roaming\firebase\boitumelompelane7_gmail_com_application_default_credentials.json
+[debug] [2025-11-04T07:43:03.956Z] DEBUG: Setting GAC to C:\Users\USER\AppData\Roaming\firebase\boitumelompelane7_gmail_com_application_default_credentials.json
+[debug] [2025-11-04T07:43:03.958Z] Checked if tokens are valid: true, expires at: 1762245780234
+[debug] [2025-11-04T07:43:03.958Z] Checked if tokens are valid: true, expires at: 1762245780234
+[debug] [2025-11-04T07:43:03.959Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/movie-review-platform-4449e/adminSdkConfig [none]
+[debug] [2025-11-04T07:43:06.094Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/movie-review-platform-4449e/adminSdkConfig 200
+[debug] [2025-11-04T07:43:06.095Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/movie-review-platform-4449e/adminSdkConfig {"projectId":"movie-review-platform-4449e","storageBucket":"movie-review-platform-4449e.firebasestorage.app"}
+[debug] [2025-11-04T07:43:06.109Z] [functions] Watching "C:\Users\USER\movie-review-platform\functions" for Cloud Functions...
+[debug] [2025-11-04T07:43:06.116Z] Validating nodejs source
+[debug] [2025-11-04T07:43:08.820Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^6.0.1",
+    "serverless-http": "^4.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T07:43:08.820Z] Building nodejs source
+[debug] [2025-11-04T07:43:08.821Z] Failed to find version of module node: reached end of search path C:\Users\USER\movie-review-platform\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-11-04T07:43:08.826Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T07:43:08.835Z] Found firebase-functions binary at 'C:\Users\USER\movie-review-platform\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8045
+
+[debug] [2025-11-04T07:43:10.676Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-11-04T07:43:14.729Z] [functions] Loaded functions definitions from source: api.
+[debug] [2025-11-04T07:43:14.730Z] [functions[us-central1-api]] http function initialized (http://127.0.0.1:5000/movie-review-platform-4449e/us-central1/api).
+[info] i  functions: Loaded functions: api 
+[warn] !  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub, storage, eventarc, tasks 
+[debug] [2025-11-04T07:55:01.469Z] Functions emulator received unknown request at path /api/reviews/movie/354912
+[debug] [2025-11-04T07:55:01.616Z] Functions emulator received unknown request at path /api/reviews/movie/354912
+[debug] [2025-11-04T08:08:13.593Z] Functions emulator received unknown request at path /api/reviews/movie/354912
+[debug] [2025-11-04T08:08:13.623Z] Functions emulator received unknown request at path /api/reviews/movie/354912
+[debug] [2025-11-04T08:10:05.186Z] Functions emulator received unknown request at path /api/reviews/movie/354912
+[debug] [2025-11-04T08:10:05.751Z] Functions emulator received unknown request at path /api/reviews/movie/354912
+[debug] [2025-11-04T08:10:53.126Z] Functions emulator received unknown request at path /api/reviews/movie/354912
+[debug] [2025-11-04T08:10:53.132Z] Functions emulator received unknown request at path /api/reviews/movie/354912
+[debug] [2025-11-04T08:11:11.663Z] Functions emulator received unknown request at path /api/reviews/movie/1290159
+[debug] [2025-11-04T08:11:11.674Z] Functions emulator received unknown request at path /api/reviews/movie/1290159
+[debug] [2025-11-04T12:43:41.374Z] Functions emulator received unknown request at path /api/reviews/movie/1290159
+[debug] [2025-11-04T12:43:41.395Z] Functions emulator received unknown request at path /api/reviews/movie/1290159
+[debug] [2025-11-04T12:45:40.046Z] Functions emulator received unknown request at path /api/reviews/movie/1242898
+[debug] [2025-11-04T12:45:40.050Z] Functions emulator received unknown request at path /api/reviews/movie/1242898
+[debug] [2025-11-04T12:46:05.239Z] Functions emulator received unknown request at path /api/reviews

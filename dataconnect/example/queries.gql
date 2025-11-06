@@ -1,0 +1,31 @@
+mutation CreateUser($username: String!, $email: String!, $passwordHash: String!, $displayName: String) @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  user_insert(data: {username: $username, email: $email, passwordHash: $passwordHash, displayName: $displayName})
+}
+
+query GetReviewsForMovie($movieId: UUID!) @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  reviews(where: {movieId: {eq: $movieId}}) {
+    id
+    rating
+    reviewText
+    user {
+      id
+      username
+      displayName
+    }
+  }
+}
+
+mutation CreateMovieReview($movieId: UUID!, $rating: Int!, $reviewText: String!) @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  review_insert(data: {movieId: $movieId, userId_expr: "auth.uid", rating: $rating, reviewText: $reviewText})
+}
+
+query GetUser($id: UUID!) @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  user(id: $id) {
+    id
+    username
+    displayName
+    email
+    bio
+    createdAt
+  }
+}
